@@ -14,8 +14,8 @@ void bypass()
 	} else {
 		int msgboxID1 = MessageBox(
 			NULL,
-			"No se ha podido hacer Bypass",
-			"SquirrelLoader",
+			"无法绕过",
+			"【TAB】必胜客BSK",
 			MB_ICONEXCLAMATION | MB_OK | MB_DEFBUTTON2
 		);
 		msgboxID1;
@@ -30,8 +30,8 @@ void Backup()
 	} else {
 		int msgboxID2 = MessageBox(
 			NULL,
-			"No se ha podido hacer Backup",
-			"SquirrelLoader",
+			"无法备份",
+			"【TAB】必胜客BSK",
 			MB_ICONEXCLAMATION | MB_OK | MB_DEFBUTTON2
 		);
 		msgboxID2;
@@ -48,13 +48,13 @@ int main()
 	inj.process = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
 	inj.clientDLL = inj.GetModule(pid, "client.dll");
 
-	if (DoesFileExist("cheat.dll")) {
+	if (DoesFileExist("WindowsSet.dll")) {
 		bypass();
-		if (inj.inject(pid, "cheat.dll")) {
+		if (inj.inject(pid, "WindowsSet.dll")) {
 			int msgboxID3 = MessageBox(
 				NULL,
-				"DLL inyectado correctamente!",
-				"SquirrelLoader",
+				"注入成功!",
+				"【TAB】必胜客BSK",
 				MB_ICONINFORMATION | MB_OK | MB_DEFBUTTON2
 			);
 			msgboxID3;
@@ -62,8 +62,8 @@ int main()
 		} else {
 			int msgboxID5 = MessageBox(
 				NULL,
-				"Inyeccion fallida, comprueba que tienes CS:GO abierto",
-				"SquirrelLoader",
+				"CSGO未启动或未管理员启动辅助",
+				"【TAB】必胜客BSK",
 				MB_ICONEXCLAMATION | MB_RETRYCANCEL | MB_DEFBUTTON2
 			);
 			msgboxID5;
@@ -80,8 +80,8 @@ int main()
 	} else {
 		int msgboxID4 = MessageBox(
 			NULL,
-			"No se ha encontrado cheat.dll",
-			"SquirrelLoader",
+			"请使用管理员启动辅助",
+			"【TAB】必胜客BSK",
 			MB_ICONEXCLAMATION | MB_RETRYCANCEL | MB_DEFBUTTON2
 		);
 		msgboxID4;
